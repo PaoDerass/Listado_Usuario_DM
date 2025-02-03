@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { SafeAreaView } from "react-native";
+import { EstudiantesProvider } from "./src/context/Usuarios_Context";
+import ListaEstudiantes from "./src/components/Lista_Estudiantes";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <EstudiantesProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ListaEstudiantes />
+      </SafeAreaView>
+    </EstudiantesProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
